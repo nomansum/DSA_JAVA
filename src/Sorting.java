@@ -29,7 +29,7 @@ public class Sorting {
 
 
     public static void main(String[] args) {
-        int[] arr = {-5,-4,0,2,3,10,15,16,90};
+        int[] arr = {-5,-4,0,2,2,3,10,15,16,90};
 int[] result = sortedSquares(arr);
       MergeSort.printArray(result);
         System.out.println("here");
