@@ -103,6 +103,44 @@ public  void dfs(int v , boolean[] visited  , int[] compId , int count){
         }
 }
 
+// Problem 501: Given an m,n 2D binary grid , which represents a map of 1'(land)
+//    and 0's(water) , return the number of islands .
+//    An island is surrounded by water and is formed by connecting adjacent
+//    lands horizontally or vertically. You may assume all four edges
+//    of the grid are all surrounded by water.
+
+ public int numIslands(char[][] grid){
+        int m = grid.length;
+        int n = grid[0].length;
+        boolean[][] visited = new boolean[m][n];
+        int numOfIslands = 0;
+        for(int i =0;i<m;++i){
+            for(int j = 0;j<n;++j){
+                if(!visited[i][j] && grid[i][j]=='1'){
+                    dfs(grid,i,j,visited);
+                    numOfIslands++;
+                }
+            }
+        }
+        return numOfIslands;
+ }
+ public void dfs(char[][] grid,int row , int col , boolean[][] visited){
+
+        if(row<0 || col<0 || row>=grid.length || col>= grid[0].length || visited[row][col]|| grid[row][col]=='0'){
+            return;
+        }
+        visited[row][col] = true;
+        dfs(grid,row,col-1,visited);
+
+     dfs(grid,row-1,col,visited);
+
+     dfs(grid,row,col+1,visited);
+
+     dfs(grid,row+1,col,visited);
+
+ }
+
+
 
 
 
