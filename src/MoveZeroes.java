@@ -1,25 +1,33 @@
 public class MoveZeroes {
 
 
-    public void moveZeroes(int[] nums) {
+    public static void moveZeroes(int[] nums) {
 
        int n  = nums.length;
-
        int zeroIndex = -1;
-       int nonZeroIndex = 0;
-
        int idx = 0;
        while(idx<n){
-
-           if(nums[idx]==0 && zeroIndex==-1){
-               zeroIndex=idx;
-           }
+          if(nums[idx]==0 && zeroIndex==-1){
+              zeroIndex = idx;
+          }
+          if(nums[idx]!=0 && zeroIndex!=-1){
+                  int temp = nums[idx];
+                  nums[idx] = nums[zeroIndex];
+                  nums[zeroIndex] = temp;
+                  if(idx - zeroIndex>1){
+                      zeroIndex++;
+                  }
+                  else {
+                      zeroIndex = idx;
+                  }
+          }
+          idx++;
 
        }
     }
 
     public static void main(String[] args) {
-        int[] arr ={0,1,0,3,12};
+        int[] arr ={0};
         MoveZeroes solution = new MoveZeroes();
         solution.moveZeroes(arr);
         for(int val:arr){
