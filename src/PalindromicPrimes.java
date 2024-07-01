@@ -1,10 +1,5 @@
-public class Hashing {
 
-
-    // Separate Chaining --->
-
-
-
+public class PalindromicPrimes {
 
 
 
