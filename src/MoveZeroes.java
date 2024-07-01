@@ -1,7 +1,25 @@
 public class MoveZeroes {
 
-
     public static void moveZeroes(int[] nums) {
+
+        int j = 0;
+        int totalZeroes = 0;
+
+        for(int i=0;i<nums.length;++i){
+            if(nums[i]==0){
+                totalZeroes++;
+            }
+            else{
+                nums[j++] = nums[i];
+            }
+        }
+
+        for(int i=0;i<totalZeroes;++i){
+            nums[j++] = 0;
+        }
+
+    }
+    public static void moveZeroesOptimal1(int[] nums) {
 
        int n  = nums.length;
        int zeroIndex = -1;
