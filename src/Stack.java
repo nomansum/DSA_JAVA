@@ -1,6 +1,6 @@
 import java.util.EmptyStackException;
 
-public class Stack {
+public class Stack<S> {
 
  private ListNode top;
  private int length;
